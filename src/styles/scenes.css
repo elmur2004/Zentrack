@@ -1,0 +1,163 @@
+/* ================================================================== */
+/* Hero assembly scene (M02). The default (un-animated) state IS the  */
+/* final coordinated frame: reduced motion, no-JS and print show it.   */
+/* The one-shot sequence runs as CSS keyframes from first paint, so it */
+/* never waits for hydration and can never leave content hidden.       */
+/* ================================================================== */
+
+.hero-scene { margin: 0; position: relative; }
+.hero-scene__svg {
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: min(72svh, 700px);
+  margin-inline: auto;
+  overflow: visible;
+}
+.hero-scene * { vector-effect: non-scaling-stroke; }
+/* Paths drawn with a pathLength-normalised dash must use user-space strokes:
+   non-scaling-stroke breaks the 0–1 dash normalisation (the route rendered only in part). */
+.hero-scene .hs-coord, .hero-scene .hs-coord-head, .hero-scene .hs-sheet__accent { vector-effect: none; }
+.hero-scene__caption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block-start: 8px;
+  font-size: var(--fs-small);
+  color: var(--color-muted-on-dark);
+  justify-content: center;
+}
+.hero-scene__tick { inline-size: 16px; block-size: 2px; background: var(--color-orange); transform: skewX(-35deg); }
+
+/* Utilities */
+.hs-ghost-plane { fill: rgb(255 255 255 / 0.018); stroke: rgb(255 255 255 / 0.22); stroke-width: 1; stroke-dasharray: 4 5; }
+.hs-run { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.u-water { stroke: #7fb0de; }
+.u-sewer { stroke: #a8a39a; stroke-dasharray: 9 5; }
+.u-storm { stroke: #6fb5bf; stroke-dasharray: 10 4 2 4; }
+.u-power { stroke: #d8c27f; stroke-width: 1.6; }
+.u-telecom { stroke: #b7a8e0; stroke-dasharray: 6 3; stroke-width: 1.8; }
+.hs-manhole { fill: #0b1624; stroke: #a8a39a; stroke-width: 1.4; }
+
+/* Coordination path + interface nodes (stroke widths in user units: ~3px at desktop size) */
+.hs-coord { fill: none; stroke: #fa5211; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+/* Leading highlight: a short bright dash that rides ahead of the trace; parked past the end when still */
+.hs-coord-head { fill: none; stroke: #ffd9c8; stroke-width: 3.2; stroke-linecap: round; stroke-dasharray: 0.045 2; stroke-dashoffset: -1.1; }
+.hs-node { fill: #fa5211; stroke: #0b1624; stroke-width: 1.5; }
+/* The coordinated route seen through the street (hidden-line convention: dashed) */
+.hs-xray { fill: none; stroke: #fa5211; stroke-opacity: 0.6; stroke-width: 1.4; stroke-dasharray: 5 4; stroke-linejoin: round; }
+
+/* Issue marker: conceptual, resolves visually (no metric) */
+.hs-issue__ring { fill: rgb(250 82 17 / 0.16); stroke: #fa5211; stroke-width: 2; }
+.hs-issue__x { stroke: #fa5211; stroke-width: 2; }
+.hs-issue { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.hs-resolved { transform-box: fill-box; transform-origin: center; }
+.hs-resolved__ring { fill: rgb(11 22 36 / 0.85); stroke: #e8eef4; stroke-width: 1.6; }
+.hs-resolved__tick { fill: none; stroke: #e8eef4; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Links between layers */
+.hs-link { stroke: rgb(232 238 244 / 0.35); stroke-width: 1; stroke-dasharray: 2 4; fill: none; }
+.hs-link--proj { stroke: rgb(250 82 17 / 0.45); transform-box: fill-box; transform-origin: 50% 100%; }
+
+/* Surface */
+.hs-plane { stroke: rgb(255 255 255 / 0.22); stroke-width: 1; }
+.hs-slab-left { fill: #0f1c2e; stroke: rgb(255 255 255 / 0.12); }
+.hs-slab-right { fill: #0c1726; stroke: rgb(255 255 255 / 0.12); }
+.hs-landscape { fill: rgb(140 199 154 / 0.1); stroke: rgb(140 199 154 / 0.28); }
+.hs-contour { fill: none; stroke: rgb(140 199 154 / 0.32); stroke-width: 1; }
+.hs-road { fill: #233a58; stroke: none; }
+.hs-kerb { stroke: rgb(255 255 255 / 0.4); stroke-width: 1.2; fill: none; }
+.hs-lane { stroke: rgb(255 255 255 / 0.32); stroke-width: 1; stroke-dasharray: 8 7; fill: none; }
+.hs-cover { fill: #0b1624; stroke: rgb(255 255 255 / 0.5); stroke-width: 1; }
+.hs-tree__shadow { fill: rgb(0 0 0 / 0.25); }
+.hs-tree__trunk { stroke: rgb(140 199 154 / 0.5); stroke-width: 1.2; }
+.hs-tree__crown { fill: #2f5a4f; stroke: rgb(170 220 180 / 0.55); stroke-width: 1; }
+.hs-mass__left { fill: #1b2e47; stroke: rgb(255 255 255 / 0.16); stroke-width: 1; stroke-linejoin: round; }
+.hs-mass__right { fill: #142337; stroke: rgb(255 255 255 / 0.16); stroke-width: 1; stroke-linejoin: round; }
+.hs-mass__top { fill: #2a4363; stroke: rgb(255 255 255 / 0.28); stroke-width: 1; stroke-linejoin: round; }
+
+/* Drawing plane */
+.hs-sheet__paper { stroke: rgb(248 249 250 / 0.55); stroke-width: 1.2; }
+.hs-sheet__border { fill: none; stroke: rgb(248 249 250 / 0.35); stroke-width: 1; }
+.hs-sheet__title { fill: rgb(248 249 250 / 0.08); stroke: rgb(248 249 250 / 0.45); stroke-width: 1; }
+.hs-sheet__fine { fill: none; stroke: rgb(248 249 250 / 0.28); stroke-width: 1; }
+.hs-sheet__line { fill: none; stroke: rgb(248 249 250 / 0.7); stroke-width: 1.3; }
+.hs-sheet__dash { fill: none; stroke: rgb(248 249 250 / 0.4); stroke-width: 1; stroke-dasharray: 5 4; }
+.hs-sheet__accent { fill: none; stroke: #fa5211; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.hs-sheet__dim { fill: none; stroke: rgb(248 249 250 / 0.45); stroke-width: 1; }
+
+/* ---------- One-shot assembly storyboard (spec §11.3, refined in the post-build pass) ----------
+   Overlapping beats, ~1.8 s in total, stable final frame:
+     0–900 ms     surface plane settles; utilities slide into alignment beneath the street (150–900)
+     550–900      risers connect the utilities to the surface
+     600–1200     the coordination route traces, led by a bright head; its interface nodes light up as it passes
+     1050–1650    the issue marker pops at the crossing, then resolves to a tick (1350–1650)
+     1150–1500    the route appears through the street as a hidden line
+     1000–1350    projection lines grow up from the model as the drawing sheet arrives (1050–1650)
+     1350–1800    handover: the coordinated route is drawn onto the sheet
+   --hs-t scales every time (shorter on phones). */
+.hero-scene { --hs-t: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .hs-surface { animation: hs-surface calc(var(--hs-t) * 900ms) cubic-bezier(0.22, 1, 0.36, 1) 0ms both; }
+  .hs-utilities { animation: hs-utilities calc(var(--hs-t) * 750ms) cubic-bezier(0.22, 1, 0.36, 1) calc(var(--hs-t) * 150ms) both; }
+  .hs-links { animation: hs-fade calc(var(--hs-t) * 350ms) ease-out calc(var(--hs-t) * 550ms) both; }
+  .hs-coord { animation: hs-draw calc(var(--hs-t) * 600ms) cubic-bezier(0.65, 0, 0.35, 1) calc(var(--hs-t) * 600ms) both; }
+  .hs-coord-head { animation: hs-head calc(var(--hs-t) * 600ms) cubic-bezier(0.65, 0, 0.35, 1) calc(var(--hs-t) * 600ms) both; }
+  .hs-node--start { animation: hs-fade calc(var(--hs-t) * 160ms) ease-out calc(var(--hs-t) * 600ms) both; }
+  .hs-node--mid { animation: hs-pop calc(var(--hs-t) * 240ms) ease-out calc(var(--hs-t) * 880ms) both; transform-box: fill-box; transform-origin: center; }
+  .hs-issue { animation: hs-issue calc(var(--hs-t) * 600ms) ease-out calc(var(--hs-t) * 1050ms) both; }
+  .hs-resolved { animation: hs-pop calc(var(--hs-t) * 300ms) ease-out calc(var(--hs-t) * 1350ms) both; }
+  .hs-xray { animation: hs-fade calc(var(--hs-t) * 350ms) ease-out calc(var(--hs-t) * 1150ms) both; }
+  .hs-link--proj { animation: hs-grow calc(var(--hs-t) * 350ms) cubic-bezier(0.22, 1, 0.36, 1) calc(var(--hs-t) * 1000ms) both; }
+  .hs-link--proj:nth-child(2) { animation-delay: calc(var(--hs-t) * 1040ms); }
+  .hs-link--proj:nth-child(3) { animation-delay: calc(var(--hs-t) * 1080ms); }
+  .hs-link--proj:nth-child(4) { animation-delay: calc(var(--hs-t) * 1120ms); }
+  .hs-sheet { animation: hs-sheet calc(var(--hs-t) * 600ms) cubic-bezier(0.22, 1, 0.36, 1) calc(var(--hs-t) * 1050ms) both; }
+  .hs-sheet__accent { animation: hs-draw calc(var(--hs-t) * 450ms) cubic-bezier(0.65, 0, 0.35, 1) calc(var(--hs-t) * 1350ms) both; }
+}
+
+@keyframes hs-surface {
+  0% { opacity: 0; transform: translate(-10px, -16px); }
+  30% { opacity: 1; }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes hs-utilities {
+  from { opacity: 0; transform: translate(-18px, 30px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hs-sheet {
+  from { opacity: 0; transform: translateY(-26px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hs-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes hs-head {
+  from { stroke-dashoffset: 0.045; }
+  to { stroke-dashoffset: -1.1; }
+}
+@keyframes hs-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes hs-pop {
+  from { opacity: 0; transform: scale(1.5); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hs-grow {
+  from { transform: scaleY(0); }
+  to { transform: none; }
+}
+@keyframes hs-issue {
+  0% { opacity: 0; transform: scale(1.6); }
+  20% { opacity: 1; transform: none; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Simplified mobile scene: fewer layers */
+@media (max-width: 39.99rem) {
+  .hs-links, .hs-proj, .hs-contour, .hs-tree__shadow { display: none; }
+  .hero-scene { --hs-t: 0.8; }
+  .hero-scene__svg { max-block-size: 60svh; }
+}

@@ -1,0 +1,139 @@
+[Heading 1] Zentrac Website 
+[normal] . الكلام اللي بين [ ] لسه مستنية فيه رد العميل.
+[Heading 2] Header
+[normal] About Us · Services · Infrastructure · How We Work · Projects · Blog · AR
+[normal] Button: Request a Quote
+[Heading 2] 1. Home
+[normal] Engineering and BIM Consultancy
+[normal] We provide BIM modelling, coordination and shop drawings for infrastructure, landscape and building projects.
+[normal] Buttons: Request a Quote · Our Services
+[normal] Our experience
+[normal] 8 years · [13] projects · 3 countries · 11 infrastructure networks
+[normal] Our Services
+[normal] BIM Modelling: 3D models for infrastructure, landscape and buildings.
+[normal] Coordination: Clash detection and coordination between all disciplines.
+[normal] Shop Drawings: Shop drawings produced from the coordinated model.
+[normal] Design Review: Review of design drawings before modelling starts.
+[normal] Quantities and As-built: Quantity take-off and as-built models.
+[normal] Survey, Scan to BIM and AR services are provided with specialist partners.
+[normal] Why Zentrac
+[normal] We review the design before we start modelling.
+[normal] We check every model for clashes before issuing drawings.
+[normal] We specialise in infrastructure networks.
+[normal] We work to your BEP, standards and templates.
+[normal] Our Clients
+[normal] We work with developers, contractors and engineering consultants.
+[normal] Infrastructure
+[normal] We model and coordinate 11 types of infrastructure networks, including water, sewerage, stormwater, power and roads.
+[normal] Selected Projects
+[normal] AMAALA Staff Village · SEDRA · Qiddiya Resort Core
+[normal] Button: View All Projects
+[normal] Latest Articles (3 newest posts)
+[Heading 2] Contact band (bottom of every page)
+[normal] Have a project?
+[normal] Send us your drawings and scope, and we will send you a proposal. All files are covered by an NDA.
+[normal] Buttons: Request a Quote · WhatsApp
+[Heading 2] Footer
+[normal] Zentrac — Engineering and BIM Consultancy
+[normal] Download Company Profile
+[normal] Company: About Us · Projects · Partners · Careers
+[normal] Services: All Services · Infrastructure · How We Work · Our Clients
+[normal] Contact: 6th Floor, 1 Roxy Square, Heliopolis, Cairo · [Email] · [Phone] · LinkedIn
+[normal] © 2026 Zentrac. All rights reserved. · Privacy Policy
+[Heading 2] 2. About Us
+[normal] About Zentrac
+[normal] Zentrac is an engineering and BIM consultancy based in Cairo, Egypt. We provide BIM modelling, coordination and shop drawings for developers, contractors and consultants.
+[normal] Our Founder
+[normal] Zentrac was founded in 2026 by Eng. Mark Mofreh, a civil engineer with experience in roads and infrastructure since 2018. Before founding Zentrac, he worked on BIM packages for projects in Saudi Arabia, Egypt and Rwanda through his practice, BIM Experts.
+[normal] [Founder photo]
+[normal] Our Values
+[normal] Quality: Every drawing is checked before it is issued.
+[normal] Clarity: The scope and schedule are agreed in writing.
+[normal] Confidentiality: All project files are covered by an NDA.
+[normal] Honesty: We show our exact role on every project.
+[Heading 2] 3. Services
+[normal] Our Services
+[normal] You can hire us for one service or for the full scope.
+[normal] (The 5 services, as on the Home page, each with "Learn More".)
+[normal] Survey, Scan to BIM and AR are provided with specialist partners.
+[Heading 2] 4. Service Pages
+[Heading 3] BIM Modelling
+[normal] We build 3D models for infrastructure, landscape and building projects, according to your BEP and the required LOD (up to LOD 400).
+[normal] Deliverables: BIM models · RFI register
+[normal] Related project: King Salman Park
+[Heading 3] Coordination
+[normal] We combine all discipline models into one model, run clash detection and follow up on every clash until it is resolved.
+[normal] Deliverables: Coordinated model · Clash report · RFI register
+[normal] Related project: AMAALA Staff Village
+[Heading 3] Shop Drawings
+[normal] We produce shop drawings and combined services drawings from the coordinated model, ready for consultant approval.
+[normal] Deliverables: Shop drawings · Combined services drawings · Clash report
+[normal] Related project: SEDRA
+[Heading 3] Design Review
+[normal] We review the design drawings before modelling starts and send any missing or conflicting information back as RFIs.
+[normal] Deliverables: Review report · RFI register
+[normal] Related project: [to confirm]
+[Heading 3] Quantities and As-built
+[normal] We prepare quantity take-offs from the model, support the site during construction, and deliver as-built models at handover.
+[normal] Deliverables: Quantity take-off · As-built models
+[normal] Related project: AMAALA Staff Village
+[normal] Our process (on every service page): Review the drawings → Build the model → Coordinate → Deliver
+[Heading 2] 5. Infrastructure
+[normal] Infrastructure BIM
+[normal] We model and coordinate infrastructure networks so that conflicts are solved before construction starts.
+[normal] Networks: Water · Sewerage · Irrigation · Stormwater · Firefighting · LV / MV Power · Street Lighting · CCTV and Telecom · Roads · Landscape and Grading · Canals
+[normal] Projects: AMAALA Staff Village · Qiddiya Resort Core · King Fahd Sports City
+[Heading 2] 6. How We Work
+[normal] How We Work
+[normal] You can start at any stage of the project.
+[normal] Review: We review the drawings and site information.
+[normal] Model: We build the models according to your BEP.
+[normal] Coordinate: We run clash detection and resolve clashes.
+[normal] Drawings: We produce shop drawings from the model.
+[normal] Quantities: We prepare quantities and schedules.
+[normal] Site Support: We support the site and deliver as-built models.
+[normal] Ways to work with us: One package · One network · Coordination only · Full scope
+[Heading 2] 7. Our Clients
+[normal] Our Clients
+[normal] We work with developers, contractors and engineering consultants.
+[normal] Developers and Owners: Design review and coordinated models before construction.
+[normal] Contractors: Coordinated shop drawings that reduce resubmissions.
+[normal] Consultants: Additional modelling and coordination support for your team.
+[Heading 2] 8. Projects
+[normal] Our Projects
+[normal] Selected experience of our founder and BIM Experts. Each project shows our exact scope.
+[normal] [Names and images need the client's written approval before going live.]
+[normal] AMAALA Staff Village, Saudi Arabia: Modelling and coordination of five utility networks.
+[normal] SEDRA, Saudi Arabia: Landscape and utility modelling across four phases.
+[normal] Qiddiya Resort Core, Saudi Arabia: Roads, landscape and utility modelling and shop drawings.
+[normal] King Salman Park, Saudi Arabia: Landscape BIM to LOD 400.
+[normal] King Fahd Sports City, Saudi Arabia: Stormwater network modelling and coordination.
+[normal] Dabaa, Egypt: Canal modelling and shop drawings.
+[normal] Kigali Sewerage, Rwanda: Sewerage network design and modelling.
+[normal] Ghorayzat WWTP, Egypt: Treatment plant design and modelling support.
+[normal] Other projects: Mansoura 1 · Al Bairaq · Ibrahim Al Khaleel Road · Breiman · Park Ride and Welcome Center
+[Heading 2] 9. Project Page (example)
+[normal] AMAALA Staff Village
+[normal] Location: Saudi Arabia · Developer: Red Sea Global
+[normal] Scope: Modelling and coordination of sewerage, irrigation, firefighting, water and LV networks for Zone 4, with surface grading and as-built models.
+[normal] Services: BIM Modelling · Coordination · As-built
+[Heading 2] 10. Blog
+[normal] Blog
+[normal] Articles on BIM modelling, coordination and infrastructure.
+[normal] First articles: Why utility networks clash on site · What is a design review? · What does LOD 400 mean? · What is a clash report? · Why shop drawings get rejected · What is an RFI?
+[Heading 2] 11. Request a Quote
+[normal] Request a Quote
+[normal] Send us your project details and drawings. We will reply with a proposal within [XX] working days.
+[normal] Form: Name · Company · Email · Phone · Country · Service · Project details · Upload files
+[normal] Button: Send Request
+[normal] Office: 6th Floor, 1 Roxy Square, Heliopolis, Cairo, Egypt · [Email] · [Phone]
+[Heading 2] 12. Partners
+[normal] Partners
+[normal] We work with consultants, contractors, survey firms and engineering companies in Egypt and Saudi Arabia. All terms are agreed in writing.
+[normal] Button: Contact Us
+[Heading 2] 13. Careers
+[normal] Careers
+[normal] We work with BIM engineers and modellers on a project basis. Send us your CV and portfolio.
+[normal] Form: Name · Email · Discipline · Years of experience · Portfolio link · CV
+[Heading 2] 14. Privacy Policy
+[normal] [Legal text from the client]

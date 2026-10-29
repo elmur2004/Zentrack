@@ -1,0 +1,6 @@
+/en [mobile] total 282.0 KiB — Document 29.7 KiB, Image 16.7 KiB, Stylesheet 19.8 KiB, Font 36.6 KiB, Script 152.7 KiB, Fetch 26.4 KiB | initial JS (scripts in HTML) 152.7 KiB, later/prefetched JS 0.0 KiB
+/en [desktop] total 321.9 KiB — Document 29.7 KiB, Image 16.7 KiB, Stylesheet 19.8 KiB, Font 36.6 KiB, Script 162.5 KiB, Fetch 56.5 KiB | initial JS (scripts in HTML) 152.7 KiB, later/prefetched JS 9.8 KiB
+/ar [mobile] total 369.5 KiB — Document 32.1 KiB, Stylesheet 19.8 KiB, Image 16.7 KiB, Font 120.0 KiB, Script 152.7 KiB, Fetch 28.3 KiB | initial JS (scripts in HTML) 152.7 KiB, later/prefetched JS 0.0 KiB
+/ar [desktop] total 411.6 KiB — Document 32.1 KiB, Stylesheet 19.8 KiB, Image 16.7 KiB, Font 120.0 KiB, Script 162.5 KiB, Fetch 60.6 KiB | initial JS (scripts in HTML) 152.7 KiB, later/prefetched JS 9.8 KiB
+/ar/request-a-quote [mobile] total 392.3 KiB — Document 20.3 KiB, Image 20.5 KiB, Stylesheet 19.8 KiB, Font 120.0 KiB, Script 191.6 KiB, Fetch 20.2 KiB | initial JS (scripts in HTML) 188.5 KiB, later/prefetched JS 3.2 KiB
+/ar/request-a-quote [desktop] total 435.5 KiB — Document 20.3 KiB, Stylesheet 19.8 KiB, Image 20.5 KiB, Font 120.0 KiB, Script 201.4 KiB, Fetch 53.6 KiB | initial JS (scripts in HTML) 188.5 KiB, later/prefetched JS 13.0 KiB

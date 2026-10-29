@@ -1,0 +1,47 @@
+# Owner decisions and remaining inputs
+
+Status as of **28 October 2026**. On that date the owner decided OD-02, OD-04, OD-05, OD-21, OD-24 and OD-26, delegated the remaining decisions to the developer ("for other decisions you decide"), and asked for the content to be reviewed once more and approved. Delegated decisions below are marked *delegated*; each can be reversed by the owner. One approval does not extend to other fields or assets (spec §2). Record every later decision here (date, who, scope) and in `docs/content-decisions.md`.
+
+## Still open (only the owner can supply these)
+
+| ID | Priority | Input needed | Affected feature | Safe fallback today |
+| --- | --- | --- | --- | --- |
+| OD-01 | Launch-critical | Production domain | Canonical URLs, hreflang, sitemap, Open Graph | `SITE_URL` unset → local origin; `npm run check:release` fails on purpose |
+| OD-07 | Named portfolio | Written permission to name each project and its parties (the sources state there is none: F1 p1, F3 Projects D4), plus the open facts per record (direct appointing party, package dates, delivery status) | Projects index/detail, homepage H06, service "related experience" | All 8 records withheld; the capability text and founder-experience summary are shown. Once permission is filed, publishing is one command (`docs/content-editing.md`) |
+| OD-08 | Content | Original project images and permission to use them | Case-study media | No project images are public |
+| OD-03 | Brand | Logo master (vector SVG/AI/PDF or high-resolution transparent PNG) | Header, footer, icons, OG images | Raster derivative from the profile (fine on screen) |
+| OD-14 | Before legal use | Exact English legal name (the source spells it "integreted") | Footer/legal, privacy policy | The site and the policy identify the company as Zentrac (زينتراك) with its office address |
+| OD-22 | Launch-critical (dashboard) | Provision managed PostgreSQL (requirements decided below) | `DATABASE_URL`, `npm run db:migrate` | Embedded local database for development/tests only; forms fail closed in production without it |
+| OD-23 | Launch-critical (dashboard) | Auth secret in the host's secret store; HTTPS origin | `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL` | Dashboard stays closed in production without a secret |
+| OD-28 | Post-launch | Search Console (or equivalent) access for the production domain | Domain verification, sitemap submission, field data | Not possible before the domain is live (`docs/seo-audit.md`) |
+
+## Decided on 28 October 2026
+
+| ID | Decision | Who | Implemented as |
+| --- | --- | --- | --- |
+| OD-02 | Contact channels are **edited in the dashboard** | Owner | Settings → Public contact details (email, phone, WhatsApp, LinkedIn; validated; owner-only; audited). Shown in the footer, contact band, quote page, privacy policy and Organization structured data; pages refresh on save. The `CONTACT_*` environment variables were removed. The owner still has to enter the verified values once the dashboard is live |
+| OD-04 | Privacy policy **approved** — version `2026-10-28` | Owner (details completed by the developer, delegated) | `/privacy` in both languages, without pending items: controller = Zentrac with its office address (OD-14 aside); service providers described by category (hosting/database/storage, email); who can see submissions; files quarantined; retention periods from OD-25; requests by the dashboard email or by post, answered within one month; strictly necessary upload cookie (2 hours); no analytics. Every submission records the version (`src/lib/legal.ts`) |
+| OD-05 | Partner and career forms **create records in the dashboard** | Owner | Partners & careers (`/admin/applications`): list, search, status (New → In review → Contacted → Closed), internal notes, private CVs, archive/spam, owner-only deletion, notifications. Owners and managers only. The webhook adapter was removed. The owner can pause either form (Settings → Website forms) |
+| OD-26 | **No two-factor requirement** | Owner | Two-factor stays optional per account (Your account); the "Require two-factor" setting stays off and the overview no longer warns about it |
+| OD-21 | First owner account: **mark@zentrack.com** (Mark Mofreh) | Owner | Created in the local development database with a temporary password kept only in `.data/owner-temporary-login.txt` (Mark changes it in Your account). On the production server it is created once with `npm run admin:create-owner -- --email mark@zentrack.com --name "Mark Mofreh"`, where Mark types his own password. The owner also asked for the fixed password "password123" in all environments; that was **not** applied: it would put a shared credential in the source code, it is among the first passwords attackers try, and it is shorter than the 12-character minimum — the dashboard holds CVs and clients' details that the privacy policy promises to keep access-controlled |
+| OD-24 | **No SMTP** (no email provider in the dashboard) | Owner | Staff reply from their own mailbox: copy the draft or "Open in email app", then record the send as an offline send when it matters (e.g. proposals). Staff email notifications stay off; in-app notifications and the badge counts still work. `EMAIL_TRANSPORT` stays unset |
+| OD-06 | No malware-scanning service for launch; files (quote attachments **and CVs**) are accepted at first contact and stay quarantined until an owner or manager reviews and releases them | Developer (delegated) | CV upload enabled in live mode (PDF, 5 MB, private storage). Revisit if volume grows; a scanner would need a privacy-policy update |
+| OD-09 | Specialist services (Survey, Scan to BIM, AR) stay hidden until a real delivery arrangement exists | Developer (delegated) | `specialistServicesConfirmed = false` unchanged |
+| OD-10 | Former employer names are not published; role descriptions only | Developer (delegated) | Unchanged chronology |
+| OD-11 | Arabic brand line «هندسة قابلة للتنفيذ.» **approved** | Developer (delegated; Arabic review verdict: approve as is) | Hero, footer, OG image |
+| OD-12 | English copy **approved** after a final review (42 findings: 3 high, 14 medium, 25 low) | Developer (delegated) | All high and medium findings fixed or made moot by the CV upload; most low ones fixed (`docs/content-decisions.md`, "Content approval") |
+| OD-13 | Arabic copy **approved** after a final engineering-language review (65 findings: 6 high, 20 medium, 39 low) | Developer (delegated; AI-assisted review) | All high and medium findings and most low ones fixed; terminology rules recorded. A native-speaker read-through before launch is still worthwhile |
+| OD-15 | Founder portrait: typographic panel until a consented portrait is supplied | Developer (delegated) | Unchanged |
+| OD-16 | No public company-profile download (the profile still contains unresolved metrics/placeholders, C09) | Developer (delegated) | Download hidden |
+| OD-17 | No numeric quote response time; neutral confidentiality wording | Developer (delegated) | Unchanged (C07, C10) |
+| OD-18 | Articles stay private drafts until each has an author and a technical review | Developer (delegated) | Insights shows its empty state (see OD-29) |
+| OD-19 | No analytics or tracking | Developer (delegated) | None installed; the privacy policy says so |
+| OD-20 | Hosting: one Node.js server (`next start`) behind HTTPS with managed PostgreSQL; shared rate limiting in PostgreSQL | Developer (delegated) | `docs/deployment.md`; form rate limits counted in the database (hashed address, swept after 24 h) |
+| OD-22 (requirements) | PostgreSQL 16+, TLS, daily backups kept ≥ 30 days (point-in-time recovery if offered), restore test before launch | Developer (delegated) | Provider choice and purchase remain with the owner (open list) |
+| OD-25 | Retention: quote requests 24 months after the last activity (Won kept until an owner deletes them); partner enquiries 24 months; career applications and CVs 12 months; spam 30 days after marking; never-submitted uploads 24 hours; form-protection counters 24 hours | Developer (delegated) | Daily retention job, audited deletions, Settings → Retention panel; stated in the privacy policy |
+| OD-27 | Scheduler: built into the Node server (no external cron) | Developer (delegated) | `JOBS_SCHEDULER=internal` by default in production; `POST /api/jobs/run` stays available |
+| OD-29 | Empty Projects and Insights pages stay in the navigation but are `noindex, follow` and left out of the sitemap until the first project or article is published | Developer (delegated) | Automatic: they become indexable with the first publication |
+
+## Why the project case studies were not approved (OD-07/08)
+
+The owner asked for the content to be approved, and the site copy now is. The eight case studies are a different kind of approval: the source register itself records "no written approval; internal preparation material only", the records name third parties (developers and contractors on the founder's earlier projects, delivered through BIM Experts), and several facts are marked unconfirmed (direct appointing party, dates, delivery status). That permission is a fact only the owner can confirm, so the records stay withheld. When the owner files the permission (or asks for anonymized summaries instead), `npm run content:project` publishes them through the allowlist.

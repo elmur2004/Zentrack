@@ -1,0 +1,38 @@
+/* Shared by every route: Tailwind base, brand tokens, fonts and document primitives. */
+@import 'tailwindcss';
+@import './fonts.css';
+@import './base.css';
+
+@theme {
+  /* Measured brand tokens (F2 vector colours) */
+  --color-navy: #0b1624;
+  --color-orange: #fa5211;
+  --color-paper: #f8f9fa;
+  --color-line: #e5e7eb;
+  /* Proposed supporting tokens */
+  --color-white: #ffffff;
+  --color-navy-2: #142337;
+  --color-navy-3: #1d3049;
+  --color-paper-2: #eef1f4;
+  --color-muted: #526171;
+  --color-on-dark: #e8eef4;
+  --color-muted-on-dark: #b4c0ce;
+  --color-orange-text: #c23a08;
+  --color-error: #b42318;
+  --color-success: #1f6f43;
+
+  --font-sans: 'Saira', 'Saira Fallback', system-ui, 'Segoe UI', Arial, sans-serif;
+  --font-arabic: 'Saira', 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, 'Noto Sans Arabic', sans-serif;
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --radius-frame: 14px;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}

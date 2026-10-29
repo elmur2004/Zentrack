@@ -1,0 +1,90 @@
+{
+  "generated": "2026-10-28",
+  "note": "Public assets ship from /public. Project assets are private and withheld; only five exist as extracted, lower-resolution copies. Source originals stay in the repository root and private-source/extracted (git-ignored). Appearance in a PDF is not permission to publish.",
+  "public": [
+    {
+      "path": "public/brand/zentrac-logo-horizontal-on-dark.png",
+      "size": [503, 93],
+      "source": "F2 page 17 back-cover image (xref 84), crop (80,80,660,230); background keyed out; navy elements rendered white as in the profile's own dark lockup (F2 page 1)",
+      "rights": "Zentrac brand asset (supplied profile)",
+      "usage": "Header, footer, OG images",
+      "derivative": "scripts/extract-logo.py",
+      "alt": { "en": "", "ar": "" },
+      "altNote": "Decorative inside a link named 'Zentrac home' / 'الصفحة الرئيسية لزينتراك'",
+      "status": "approved for use pending vector master (OD-03)"
+    },
+    {
+      "path": "public/brand/zentrac-logo-horizontal-on-light.png",
+      "size": [503, 93],
+      "source": "F2 page 17 back-cover image (xref 84); background keyed out",
+      "rights": "Zentrac brand asset",
+      "usage": "Light backgrounds (JSON-LD logo)",
+      "derivative": "scripts/extract-logo.py",
+      "status": "approved for use pending vector master (OD-03)"
+    },
+    {
+      "path": "public/brand/zentrac-logo-stacked-on-dark.png",
+      "size": [382, 191],
+      "source": "F2 page 1 cover image (xref 4), crop (100,60,560,300); background keyed out",
+      "rights": "Zentrac brand asset",
+      "usage": "Reserved",
+      "derivative": "scripts/extract-logo.py",
+      "status": "approved for use pending vector master (OD-03)"
+    },
+    {
+      "path": "public/brand/zentrac-symbol-app-icon.png, src/app/icon.png, src/app/apple-icon.png, src/app/favicon.ico",
+      "size": [512, 512],
+      "source": "Symbol cropped from the F2 page 1 stacked lockup, centred on brand navy",
+      "rights": "Zentrac brand asset",
+      "usage": "Favicon and app icons",
+      "derivative": "scripts/extract-logo.py",
+      "status": "approved for use pending vector master (OD-03)"
+    },
+    {
+      "path": "public/og/og-en.png, public/og/og-ar.png",
+      "size": [1200, 630],
+      "source": "Generated from the horizontal logo, Saira and IBM Plex Sans Arabic (scripts/generate-og.mjs)",
+      "rights": "Original generated brand art",
+      "usage": "Open Graph / Twitter cards",
+      "alt": { "en": "Zentrac logo with the line “Engineered to Be Built.”", "ar": "شعار زينتراك مع عبارة «هندسة قابلة للتنفيذ.»" },
+      "status": "public"
+    },
+    {
+      "path": "public/fonts/saira-latin-wght.woff2, public/fonts/ibm-plex-sans-arabic-arabic-{400,600}.woff2",
+      "source": "@fontsource-variable/saira 5.3.0, @fontsource/ibm-plex-sans-arabic 5.3.0 (Google Fonts builds)",
+      "rights": "SIL Open Font License 1.1 (LICENSE files alongside)",
+      "usage": "Self-hosted web fonts",
+      "status": "public"
+    },
+    {
+      "path": "public/fonts/zentrac-language-label-ar.woff",
+      "source": "Subset of @fontsource/ibm-plex-sans-arabic 5.3.0 weight 400 to the glyphs of “العربية” (scripts/subset-label-font.py), renamed “Zentrac Language Label”",
+      "rights": "SIL Open Font License 1.1 (Modified Version; copyright notice kept; LICENSE-IBM-Plex-Sans-Arabic-OFL.txt)",
+      "usage": "Arabic language-switch label on English pages (3.7 KB instead of the 43 KB full font)",
+      "status": "public"
+    }
+  ],
+  "private": [
+    { "id": "A01", "project": "P02", "registeredSize": [1573, 924], "actualFile": null, "state": "withheld" },
+    { "id": "A02", "project": "P02", "registeredSize": [1735, 807], "actualFile": null, "state": "withheld" },
+    { "id": "A03", "project": "P02", "registeredSize": [2185, 937], "actualFile": null, "state": "withheld" },
+    { "id": "A04", "project": "P02", "registeredSize": [1022, 701], "actualFile": null, "state": "withheld" },
+    { "id": "A05", "project": "P02", "registeredSize": [1578, 788], "actualFile": "private-source/extracted/F2/images/p10_x46.jpeg", "actualSize": [1578, 788], "state": "withheld", "alt": { "en": "Model view of road coordination and kerb details around a roundabout", "ar": "لقطة من نموذج لتنسيق الطرق وتفاصيل الأرصفة حول تقاطع دائري" } },
+    { "id": "A06", "project": "P02", "registeredSize": [1959, 1120], "actualFile": null, "state": "withheld" },
+    { "id": "A07", "project": "P01", "registeredSize": [1538, 649], "actualFile": "private-source/extracted/F2/images/p10_x45.jpeg", "actualSize": [1538, 649], "state": "withheld", "alt": { "en": "Underside coordination view of utility networks beneath roads and landscape", "ar": "منظور تنسيقي من أسفل لشبكات الخدمات تحت الطرق وتنسيق الموقع" } },
+    { "id": "A08", "project": "P01", "registeredSize": [599, 276], "actualFile": null, "state": "withheld", "note": "Small; never a hero or performance proof" },
+    { "id": "A09", "project": "P01", "registeredSize": [729, 688], "actualFile": null, "state": "withheld" },
+    { "id": "A10", "project": "P03", "registeredSize": [1805, 1346], "actualFile": null, "state": "withheld", "note": "Package association (P03 vs R03) under review" },
+    { "id": "A11", "project": "P03", "registeredSize": [1522, 1291], "actualFile": null, "state": "withheld" },
+    { "id": "A12", "project": "P03", "registeredSize": [1333, 1365], "actualFile": null, "state": "withheld" },
+    { "id": "A13", "project": "P03", "registeredSize": [2148, 724], "actualFile": null, "state": "withheld" },
+    { "id": "A14", "project": "P03", "registeredSize": [1816, 706], "actualFile": "private-source/extracted/F2/images/p10_x47.jpeg", "actualSize": [1816, 706], "state": "withheld", "alt": { "en": "Separated view of utility networks showing routes and connection points", "ar": "عرض منفصل لشبكات المرافق يوضح المسارات ونقاط الربط" } },
+    { "id": "A15", "project": "P04", "registeredSize": [1869, 1248], "actualFile": "private-source/extracted/F2/images/p10_x48.jpeg", "actualSize": [1869, 1248], "state": "withheld", "alt": { "en": "Model view of a utility network around a sports venue", "ar": "لقطة من نموذج لشبكة خدمات حول منشأة رياضية" } },
+    { "id": "A16", "project": "P05", "registeredSize": [834, 1179], "actualFile": null, "state": "withheld", "note": "Report page with logos/names; avoid as cover" },
+    { "id": "A17", "project": "P05", "registeredSize": [4723, 3338], "actualFile": "private-source/extracted/F2/images/p14_x74.jpeg", "actualSize": [2400, 1696], "state": "withheld", "note": "Downsampled copy; contains logos and names (redaction may be required)", "alt": { "en": "Setting-out drawing sheet for landscape external works", "ar": "لوحة توقيع للأعمال الخارجية لتنسيق المواقع" } },
+    { "id": "A18", "project": "FOUNDER", "registeredSize": [359, 470], "actualFile": null, "state": "withheld", "note": "Identity and consent unconfirmed; not supplied" }
+  ],
+  "notUsed": [
+    "F2 stock photography (cover building, back-cover workers, page 2/4/8 people and buildings): not Zentrac office/team/project imagery"
+  ]
+}

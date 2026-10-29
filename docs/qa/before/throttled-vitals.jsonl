@@ -1,0 +1,4 @@
+﻿{"page":"/en","runs":3,"TTFB":18,"FCP":1468,"LCP":1468,"CLS":0,"longTasks":4,"TBTapprox":519}
+{"page":"/ar","runs":3,"TTFB":14,"FCP":1916,"LCP":1916,"CLS":0,"longTasks":4,"TBTapprox":543}
+{"page":"/en/services/coordination","runs":3,"TTFB":10,"FCP":1092,"LCP":1092,"CLS":0,"longTasks":2,"TBTapprox":342}
+{"page":"/ar/request-a-quote","runs":3,"TTFB":11,"FCP":1880,"LCP":1880,"CLS":0,"longTasks":4,"TBTapprox":1117}

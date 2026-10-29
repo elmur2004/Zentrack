@@ -1,0 +1,69 @@
+{
+ "F1": {
+  "pages": 15,
+  "images": 5,
+  "fonts": [
+   "BCDEEE+ArialMT",
+   "BCDFEE+ArialMT",
+   "BCDGEE+ArialMT",
+   "BCDHEE+Calibri",
+   "BCDIEE+Arial-BoldMT",
+   "BCDJEE+Arial-BoldMT",
+   "BCDKEE+Calibri-Bold"
+  ],
+  "meta": {
+   "format": "PDF 1.7",
+   "title": "",
+   "author": "",
+   "subject": "",
+   "keywords": "",
+   "creator": "Microsoft® Word for Microsoft 365",
+   "producer": "Microsoft® Word for Microsoft 365",
+   "creationDate": "D:20261024133618+03'00'",
+   "modDate": "D:20261024133618+03'00'",
+   "trapped": "",
+   "encryption": null
+  }
+ },
+ "F2": {
+  "pages": 17,
+  "images": 10,
+  "fonts": [
+   "AAAAAA+Saira-SemiBold",
+   "BAAAAA+Saira-Medium",
+   "CAAAAA+Saira-Regular",
+   "DAAAAA+Saira-Light"
+  ],
+  "meta": {
+   "format": "PDF 1.4",
+   "title": "Zentrac Company Profile",
+   "author": "",
+   "subject": "",
+   "keywords": "",
+   "creator": "Chromium",
+   "producer": "Skia/PDF m141",
+   "creationDate": "D:20261026165409+00'00'",
+   "modDate": "D:20261026165409+00'00'",
+   "trapped": "",
+   "encryption": null
+  }
+ },
+ "F5": {
+  "pages": 14,
+  "images": 14,
+  "fonts": [],
+  "meta": {
+   "format": "PDF 1.4",
+   "title": "Zentrac Website — Page Mockups v2 (1).pdf",
+   "author": "Salma Elnaggar",
+   "subject": "",
+   "keywords": "DAHZN4tvp1Y,BAG7CxOsNIw",
+   "creator": "Canva",
+   "producer": "Canva",
+   "creationDate": "D:20261027150845+00'00'",
+   "modDate": "D:20261027150845+00'00'",
+   "trapped": "",
+   "encryption": null
+  }
+ }
+}

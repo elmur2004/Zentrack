@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# Next.js build output (public and private-review builds)
+.next/
+.next-review/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# environment (never commit credentials)
+.env
+.env.local
+.env.*.local
+
+# test output
+test-results/
+playwright-report/
+coverage/
+
+# Local checkpoints (zip archives)
+.checkpoints/
+
+# Local form/upload test data
+.data/
+
+# OS / editor
+.DS_Store
+Thumbs.db

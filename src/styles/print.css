@@ -1,0 +1,18 @@
+/* Print: remove navigation and decorative motion, keep process content, preserve RTL, no dark pages. */
+@media print {
+  .site-header, .mobile-menu, .skip-link, .hero__visual, .track__visual, .service-preview__visual,
+  .contact-band__actions, .hero__ctas, .explorer__buttons, .corner-marks, .hero__grid-bg, .page-hero__grid,
+  .section-grid-bg, .review-banner, .site-footer__nav, .breadcrumbs, .contact-band__slash, .hero__slash { display: none !important; }
+  * { animation: none !important; transition: none !important; }
+  [data-reveal-state] { opacity: 1 !important; transform: none !important; }
+  body { background: #fff; color: #000; }
+  .hero, .page-hero, .section--dark, .section--dark-2, .site-footer, .status-page, .contact-band {
+    background: #fff !important; color: #000 !important; padding-block: 24px !important; min-block-size: 0 !important;
+  }
+  .hero *, .page-hero *, .section--dark *, .site-footer *, .contact-band * { color: #000 !important; }
+  .h1, .hero__title { font-size: 28pt !important; }
+  .h2 { font-size: 20pt !important; }
+  a { text-decoration: underline; }
+  .track__stage { break-inside: avoid; min-block-size: 0 !important; }
+  .explorer__detail { background: none !important; }
+}

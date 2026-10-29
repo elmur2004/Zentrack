@@ -1,0 +1,52 @@
+[
+ {
+  "page": 6,
+  "xref": 40,
+  "file": "p06_x40.jpeg",
+  "w": 971,
+  "h": 409,
+  "ext": "jpeg",
+  "bytes": 57566,
+  "smask": 0
+ },
+ {
+  "page": 7,
+  "xref": 43,
+  "file": "p07_x43.jpeg",
+  "w": 820,
+  "h": 409,
+  "ext": "jpeg",
+  "bytes": 39032,
+  "smask": 0
+ },
+ {
+  "page": 8,
+  "xref": 46,
+  "file": "p08_x46.jpeg",
+  "w": 1054,
+  "h": 409,
+  "ext": "jpeg",
+  "bytes": 41176,
+  "smask": 0
+ },
+ {
+  "page": 9,
+  "xref": 49,
+  "file": "p09_x49.jpeg",
+  "w": 613,
+  "h": 409,
+  "ext": "jpeg",
+  "bytes": 14542,
+  "smask": 0
+ },
+ {
+  "page": 10,
+  "xref": 52,
+  "file": "p10_x52.jpeg",
+  "w": 579,
+  "h": 409,
+  "ext": "jpeg",
+  "bytes": 34294,
+  "smask": 0
+ }
+]
