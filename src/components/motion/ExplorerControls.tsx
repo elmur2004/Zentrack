@@ -1,23 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { NetworkId } from '@/content/public/networks';
-import type { ExplorerItem } from './NetworkExplorer';
-
-/** Where each network's on-diagram label points (schematic viewBox units, 560 × 420; never mirrored). */
-const ANCHORS: Record<NetworkId, [number, number]> = {
-  water: [342, 96],
-  sewerage: [150, 262],
-  irrigation: [450, 300],
-  stormwater: [470, 252],
-  firefighting: [300, 248],
-  'lv-mv': [311, 140],
-  'street-lighting': [175, 173],
-  'cctv-telecom': [330, 118],
-  roads: [353, 92],
-  'landscape-grading': [470, 312],
-  canals: [280, 384],
-};
+import type { ExplorerAnchors, ExplorerItem } from './NetworkExplorer';
 
 /**
  * Explorer selection UI. Selecting a category marks its layer on the server-rendered schematic
@@ -30,12 +14,17 @@ export function ExplorerControls({
   rootId,
   items,
   labels,
+  anchors,
+  size,
 }: {
   rootId: string;
   items: ExplorerItem[];
   labels: { groupLabel: string; showAll: string; overviewTitle: string; overviewText: string };
+  /** Where each layer's on-diagram label points, in viewBox units of a diagram of `size`. */
+  anchors: ExplorerAnchors;
+  size: [number, number];
 }) {
-  const [selected, setSelected] = useState<NetworkId | 'all'>('all');
+  const [selected, setSelected] = useState<string>('all');
   const detailId = `${rootId}-detail`;
   const current = items.find((i) => i.id === selected);
 
@@ -58,9 +47,9 @@ export function ExplorerControls({
       tag.hidden = true;
       return;
     }
-    const [x, y] = ANCHORS[item.id];
-    tag.style.left = `${(x / 560) * 100}%`;
-    tag.style.top = `${(y / 420) * 100}%`;
+    const [x, y] = anchors[item.id] ?? [size[0] / 2, size[1] / 2];
+    tag.style.left = `${(x / size[0]) * 100}%`;
+    tag.style.top = `${(y / size[1]) * 100}%`;
     const text = tag.querySelector<HTMLElement>('.explorer__tag-text');
     if (text) text.textContent = `${item.number} ${item.name}`;
     tag.hidden = false;
@@ -68,10 +57,10 @@ export function ExplorerControls({
     tag.classList.remove('is-in');
     void tag.offsetWidth;
     tag.classList.add('is-in');
-  }, [rootId, selected, items]);
+  }, [rootId, selected, items, anchors, size]);
 
   /** Non-essential preview: emphasise a layer while its button is hovered (mouse) or focused. */
-  function preview(id: NetworkId | null) {
+  function preview(id: string | null) {
     const svg = document.getElementById(rootId)?.querySelector<SVGElement>('.schematic');
     if (!svg) return;
     if (id) svg.dataset.preview = id;

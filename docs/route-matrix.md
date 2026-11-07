@@ -13,6 +13,7 @@ Every route exists in English (`/en`, LTR) and Arabic (`/ar`, RTL) from one shar
 | `/{l}/services/design-review` | Service detail | ✓ | ✓ | Published | Static | cross-browser switch | — |
 | `/{l}/services/quantities-as-built` | Service detail | ✓ | ✓ | Published | Static | routes | — |
 | `/{l}/infrastructure` | Infrastructure | ✓ | ✓ | Published | Static | explorer, no-JS list, axe | infrastructure-en-1440-water-selected, infrastructure-ar-390 |
+| `/{l}/buildings` | Buildings (building-section explorer, 8 disciplines) | ✓ | ✓ | Published (owner request, 7 Nov 2026) | Static (ISR) | buildings explorer EN/AR, axe, responsive | buildings-en-1440, buildings-ar-1440-mep-selected, buildings-en-390 |
 | `/{l}/how-we-work` | Zentrac Track | ✓ | ✓ | Published | Static | Track scroll, anchors, no-JS, axe | how-we-work-ar-1440-track |
 | `/{l}/clients` | Who We Work With | ✓ | ✓ | Published | Static | axe | clients-en-1440 |
 | `/{l}/projects` | Experience index | ✓ | ✓ | Published (capability fallback; 0 approved records); `noindex, follow` and not in the sitemap until the first record is published (OD-29) | Static (ISR) | axe | projects-en-1440-empty-state |

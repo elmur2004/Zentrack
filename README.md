@@ -3,7 +3,7 @@
 Bilingual (English / Arabic) website for **Zentrac — Engineering and BIM Consultancy**. Built from the handoff documents `01_ZENTRAC_WEBSITE_MASTER_PLAN.md` and `02_ZENTRAC_WEBSITE_BUILD_SPEC.md` and the five supplied source files (kept, unmodified, in this folder).
 
 - English at `/en` (LTR), Arabic at `/ar` (RTL), `/` → `/en`. Every page and state exists in both languages from one implementation.
-- 17 page families × 2 locales (34 static pages), 5 service pages, case-study and article templates, three forms, localized 404/error pages.
+- 18 page families × 2 locales (36 static pages, including Buildings with its building-section explorer), 5 service pages, case-study and article templates, three forms, localized 404/error pages.
 - Signature motion: hero “coordination model” assembly, infrastructure explorer, the Zentrac Track — all with reduced-motion, mobile and no-JS fallbacks.
 - Project records are **withheld** (no written approvals in the sources); the public site shows a capability-led fallback, and a private review build renders all records through the real templates.
 - **Quote dashboard** at `/en/admin` and `/ar/admin` (built from `04_ZENTRAC_QUOTE_ADMIN_DASHBOARD_PROMPT.md`): the website's quote form stores requests durably in PostgreSQL; authorized staff review, assign, follow up, message clients and track outcomes. Server-enforced roles (owner, manager, reviewer, read-only), Better Auth sessions with optional TOTP two-factor, private quarantined files, audit log, bilingual RTL/LTR interface. See `docs/admin-setup.md`.

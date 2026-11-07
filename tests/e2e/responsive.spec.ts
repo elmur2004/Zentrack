@@ -8,7 +8,7 @@ import { expect, test, type Page } from '@playwright/test';
  * docs/bilingual-accessibility-qa.md.
  */
 const WIDTHS = [320, 360, 390, 430, 768, 1024, 1280, 1440, 1920];
-const TEMPLATES = ['', 'services/coordination', 'infrastructure', 'how-we-work', 'request-a-quote', 'privacy', 'does-not-exist'];
+const TEMPLATES = ['', 'services/coordination', 'infrastructure', 'buildings', 'how-we-work', 'request-a-quote', 'privacy', 'does-not-exist'];
 
 async function horizontalOverflow(page: Page) {
   return page.evaluate(() => {

@@ -16,6 +16,7 @@ export function Header({ locale }: { locale: Locale }) {
       items={[
         { id: 'about', href: pageHref(locale, 'about'), label: t.nav.about },
         { id: 'infrastructure', href: pageHref(locale, 'infrastructure'), label: t.nav.infrastructure },
+        { id: 'buildings', href: pageHref(locale, 'buildings'), label: t.nav.buildings },
         { id: 'how-we-work', href: pageHref(locale, 'howWeWork'), label: t.nav.howWeWork },
         { id: 'projects', href: pageHref(locale, 'projects'), label: t.nav.projects },
         { id: 'insights', href: pageHref(locale, 'blog'), label: t.nav.insights },

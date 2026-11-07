@@ -178,9 +178,14 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
             </div>
             <div className="section-head__aside">
               <p className="lead muted-on-dark">{h.explorer.intro}</p>
-              <ButtonLink href={pageHref(locale, 'infrastructure')} variant="ghost-dark" arrow>
-                {h.explorer.cta}
-              </ButtonLink>
+              <div className="section-head__actions">
+                <ButtonLink href={pageHref(locale, 'infrastructure')} variant="ghost-dark" arrow>
+                  {h.explorer.cta}
+                </ButtonLink>
+                <ButtonLink href={pageHref(locale, 'buildings')} variant="ghost-dark" arrow>
+                  {h.explorer.buildingsCta}
+                </ButtonLink>
+              </div>
             </div>
           </div>
           <NetworkExplorer

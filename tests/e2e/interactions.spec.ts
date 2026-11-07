@@ -70,6 +70,37 @@ test.describe('desktop navigation and widgets', () => {
     await expect(page.locator('.category-card')).toHaveCount(11);
   });
 
+  test('buildings explorer: each discipline is highlighted and labelled on the section (EN and AR)', async ({ page }) => {
+    await page.goto('/en/buildings');
+    const explorer = page.locator('#building-explorer');
+    const svg = explorer.locator('.schematic--building');
+    const reinforcement = explorer.locator('[data-net-btn="reinforcement"]');
+    await reinforcement.click();
+    await expect(reinforcement).toHaveAttribute('aria-pressed', 'true');
+    await expect(svg).toHaveAttribute('data-selected', 'reinforcement');
+    await expect(svg.locator('g[data-net="reinforcement"]')).toHaveClass(/is-selected/);
+    await expect(explorer.locator('.explorer__detail')).toContainText('Reinforcement detailing');
+    await expect(explorer.locator('[data-explorer-tag]')).toBeVisible();
+    await expect(explorer.locator('.explorer__tag-text')).toHaveText('02 Reinforcement detailing');
+    // keyboard: Tab to the next discipline and press Space
+    await page.keyboard.press('Tab');
+    await page.keyboard.press('Space');
+    await expect(svg).toHaveAttribute('data-selected', 'hvac');
+    await explorer.getByRole('button', { name: 'Show all' }).click();
+    await expect(svg).toHaveAttribute('data-selected', 'all');
+    await expect(explorer.locator('[data-explorer-tag]')).toBeHidden();
+    await expect(page.locator('.category-card')).toHaveCount(8);
+
+    await page.goto('/ar/buildings');
+    await expect(page.locator('h1')).toHaveText('نمذجة معلومات البناء للمباني');
+    const ar = page.locator('#building-explorer');
+    await ar.locator('[data-net-btn="landscape"]').click();
+    await expect(ar.locator('.explorer__detail')).toContainText('تنسيق المواقع والأعمال الخارجية');
+    await expect(ar.locator('.schematic--building')).toHaveAttribute('data-selected', 'landscape');
+    // the drawing is never mirrored in Arabic
+    expect(await ar.locator('.schematic--building').evaluate((el) => getComputedStyle(el).transform)).toBe('none');
+  });
+
   test('M08 Track progresses with scroll and stations are real anchors', async ({ page }) => {
     await page.goto('/en/how-we-work');
     await expect(page.locator('.track__station[data-active]')).toContainText('01');

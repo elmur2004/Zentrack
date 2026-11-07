@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-const PAGES = ['', 'about', 'services', 'services/coordination', 'infrastructure', 'how-we-work', 'clients', 'projects', 'blog', 'request-a-quote', 'partners', 'careers', 'privacy', 'nope'];
+const PAGES = ['', 'about', 'services', 'services/coordination', 'infrastructure', 'buildings', 'how-we-work', 'clients', 'projects', 'blog', 'request-a-quote', 'partners', 'careers', 'privacy', 'nope'];
 
 for (const locale of ['en', 'ar']) {
   for (const path of PAGES) {

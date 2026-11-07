@@ -173,6 +173,9 @@
 .category-card__num { font-weight: 600; color: var(--color-orange-text); font-size: var(--fs-small); }
 .category-card__line { display: block; inline-size: 48px; border-block-start: 2px solid var(--color-navy); opacity: 0.8; }
 .category-card__line.explorer__swatch--roads, .category-card__line.explorer__swatch--landscape-grading { block-size: 8px; border: 1px solid var(--color-navy); background: var(--color-paper-2); }
+.category-card__line.explorer__swatch--structure, .category-card__line.explorer__swatch--landscape { block-size: 8px; border: 1px solid var(--color-navy); background: var(--color-paper-2); }
+.category-card__line.explorer__swatch--reinforcement, .category-card__line.explorer__swatch--fire-protection,
+.category-card__line.explorer__swatch--elv, .category-card__line.explorer__swatch--hvac, .category-card__line.explorer__swatch--power { border-color: var(--color-navy); }
 .category-card__line.explorer__swatch--sewerage, .category-card__line.explorer__swatch--cctv-telecom,
 .category-card__line.explorer__swatch--irrigation, .category-card__line.explorer__swatch--street-lighting,
 .category-card__line.explorer__swatch--lv-mv, .category-card__line.explorer__swatch--canals { border-color: var(--color-navy); }

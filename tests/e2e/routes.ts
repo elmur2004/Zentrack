@@ -8,6 +8,7 @@ export const PAGES = [
   'services/design-review',
   'services/quantities-as-built',
   'infrastructure',
+  'buildings',
   'how-we-work',
   'clients',
   'projects',

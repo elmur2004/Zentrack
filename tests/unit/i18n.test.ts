@@ -34,7 +34,7 @@ describe('locale switching keeps the equivalent page', () => {
     expect(switchLocaleHref('/en', 'ar')).toBe('/ar');
   });
   it('registers all page families', () => {
-    expect(allStaticRoutes()).toHaveLength(17);
+    expect(allStaticRoutes()).toHaveLength(18);
   });
 });
 

@@ -9,6 +9,7 @@ export const staticPages = {
   about: 'about',
   services: 'services',
   infrastructure: 'infrastructure',
+  buildings: 'buildings',
   howWeWork: 'how-we-work',
   clients: 'clients',
   projects: 'projects',

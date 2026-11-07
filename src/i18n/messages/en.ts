@@ -43,6 +43,7 @@ const en = {
     allServices: 'All Services',
     servicesMenu: 'Services menu',
     infrastructure: 'Infrastructure',
+    buildings: 'Buildings',
     howWeWork: 'How We Work',
     projects: 'Projects',
     insights: 'Insights',
@@ -136,6 +137,7 @@ const en = {
       intro:
         'We model and coordinate utility networks, roads, landscape and canals so conflicts can be identified and resolved before construction starts.',
       cta: 'Explore infrastructure',
+      buildingsCta: 'Building disciplines',
     },
     package: {
       eyebrow: 'Deliverables',
@@ -317,6 +319,52 @@ const en = {
     },
     scopeNote:
       'These categories describe the modelling and coordination support we provide. Design responsibility is defined separately for each project.',
+  },
+  buildingsPage: {
+    meta: {
+      title: 'Building BIM',
+      description:
+        'Modelling and coordination for buildings: structural frame and reinforcement detailing, HVAC, plumbing and drainage, fire protection, power and lighting, low current systems and landscape.',
+    },
+    hero: {
+      eyebrow: 'Buildings',
+      title: 'Building BIM',
+      lead: 'We model and coordinate the structure, its reinforcement and the building services, so that clashes can be resolved before work starts on site.',
+    },
+    explorerTitle: 'Eight building disciplines. One coordinated model.',
+    categoriesTitle: 'The eight disciplines',
+    categoriesIntro:
+      'Each project defines which disciplines are in scope and whether our role is modelling, coordination or drawing production.',
+    interfaces: {
+      eyebrow: 'Where disciplines meet',
+      title: 'Coordination interfaces we track',
+      items: [
+        'Openings and sleeves through beams, slabs and walls',
+        'Ceiling voids shared by ducts, sprinklers, cable trays and drainage',
+        'Congested reinforcement at beam–column joints and around embedded services',
+        'Shaft and riser sizes, and maintenance access to plant rooms',
+        'Landscape levels at entrances, drainage falls and planters on slabs',
+      ],
+      deliverablesTitle: 'Typical deliverables',
+      deliverables: [
+        'Federated building models',
+        'Clash reports',
+        'Combined services drawings',
+        'Openings and sleeves drawings',
+        'Reinforcement shop drawings',
+        'RFI register',
+      ],
+    },
+    scopeNote:
+      'These disciplines describe the modelling and coordination support we provide. Design responsibility is defined separately for each project.',
+  },
+  buildingExplorer: {
+    groupLabel: 'Building disciplines',
+    showAll: 'Show all',
+    overviewTitle: 'All eight disciplines',
+    overviewText:
+      'Select a discipline to highlight it in the building section. Each project defines which disciplines, roles and deliverables are in scope.',
+    caption: 'Illustrative building section — not to scale and not construction guidance.',
   },
   explorer: {
     groupLabel: 'Infrastructure categories',

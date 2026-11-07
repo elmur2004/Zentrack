@@ -12,11 +12,13 @@ async function settle(page: Page, full: boolean) {
   await page.evaluate(() => document.fonts.ready);
   if (full) {
     await page.evaluate(async () => {
+      // Instant jumps (the site uses smooth scrolling) and a short pause, so every section is
+      // actually reached and its reveal runs before the full-page capture.
       for (let y = 0; y < document.body.scrollHeight; y += 400) {
-        window.scrollTo(0, y);
-        await new Promise((r) => setTimeout(r, 60));
+        window.scrollTo({ top: y, behavior: 'instant' });
+        await new Promise((r) => setTimeout(r, 120));
       }
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'instant' });
     });
   }
   await page.waitForTimeout(1900);
@@ -40,6 +42,12 @@ const shots: Array<{ name: string; path: string; w: number; h: number; full?: bo
     await p.locator('.explorer').first().scrollIntoViewIfNeeded();
   } },
   { name: 'infrastructure-ar-390', path: '/ar/infrastructure', w: 390, h: 844, full: true },
+  { name: 'buildings-en-1440', path: '/en/buildings', w: 1440, h: 900, full: true },
+  { name: 'buildings-ar-1440-mep-selected', path: '/ar/buildings', w: 1440, h: 900, act: async (p) => {
+    await p.locator('#building-explorer').scrollIntoViewIfNeeded();
+    await p.locator('[data-net-btn="hvac"]').click();
+  } },
+  { name: 'buildings-en-390', path: '/en/buildings', w: 390, h: 844, full: true },
   { name: 'how-we-work-ar-1440-track', path: '/ar/how-we-work', w: 1440, h: 900, act: async (p) => {
     await p.locator('#stage-drawings').scrollIntoViewIfNeeded();
     await p.mouse.wheel(0, 200);

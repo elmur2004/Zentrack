@@ -30,6 +30,7 @@ How conflicting statements in the sources were resolved. Authority order (spec �
 | C22 | Hero brand line in Arabic | No verified Arabic slogan | Transcreation “هندسة قابلة للتنفيذ.” approved 28 Oct 2026 (OD-11): idiomatic, maps to قابلية التنفيذ (constructability), promises no more than “Engineered to Be Built” |
 | C23 | “Why teams hand us the hard part.” | F2 p6 marketing line | Used as the H04 heading (brand voice); the four principles carry no certification or guarantee |
 | C24 | Blog articles | F4 lists six topics; no articles exist | Six private draft records (one full bilingual draft to exercise the template); public index shows an empty state; homepage H09 hidden |
+| C25 | Buildings page | Owner request of 7 Nov 2026: a Buildings explorer like the infrastructure one, covering electrical, MEP, structural reinforcement and landscape | `/buildings`: eight disciplines (structural frame, reinforcement detailing, HVAC, plumbing and drainage, fire protection, power and lighting, low current systems, landscape and external works) described as modelling and coordination support; deliverables include reinforcement shop drawings and openings/sleeves drawings; "Design responsibility is defined separately for each project"; no counts, projects or clients claimed |
 
 ## Editorial conventions
 

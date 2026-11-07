@@ -24,6 +24,7 @@ export function Footer({ locale, contacts }: { locale: Locale; contacts: Contact
   const serviceLinks = [
     { href: pageHref(locale, 'services'), label: t.nav.allServices },
     { href: pageHref(locale, 'infrastructure'), label: t.nav.infrastructure },
+    { href: pageHref(locale, 'buildings'), label: t.nav.buildings },
     { href: pageHref(locale, 'howWeWork'), label: t.nav.howWeWork },
     { href: pageHref(locale, 'clients'), label: t.nav.clients },
   ];
