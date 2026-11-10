@@ -52,30 +52,79 @@
 }
 
 /* ---------- About ---------- */
-.founder { display: grid; gap: 40px; }
-@media (min-width: 64rem) { .founder { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: center; } }
-.founder__panel {
-  position: relative; overflow: hidden; display: grid; align-content: end; gap: 8px; aspect-ratio: 4 / 5; max-block-size: 560px;
-  padding: clamp(24px, 4vw, 40px); border-radius: var(--radius-frame); background: var(--color-navy); color: #fff;
+/* ---------- Founding team (About) ---------- */
+.team { display: grid; gap: clamp(20px, 2.4vw, 28px); }
+
+/* Founder: dark panel; the portrait carries the logo's diagonal cut with an orange edge. */
+.team-lead { display: grid; overflow: hidden; border-radius: var(--radius-frame); background: var(--color-navy); color: var(--color-on-dark); }
+.team-lead__media {
+  --cut: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  --cut-inner: polygon(0 0, 100% 0, 100% calc(90% - 6px), 0 calc(100% - 6px));
+  position: relative; aspect-ratio: 1 / 1; background: var(--color-orange); clip-path: var(--cut);
 }
-.founder__grid {
-  position: absolute; inset: 0; opacity: 0.9;
+@media (min-width: 40rem) { .team-lead__media { aspect-ratio: 4 / 3; } }
+:root[dir='rtl'] .team-lead__media {
+  --cut: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  --cut-inner: polygon(0 0, 100% 0, 100% calc(100% - 6px), 0 calc(90% - 6px));
+}
+.team-lead__media > .team__panel { clip-path: var(--cut-inner); }
+/* The founder's cut-out has clear space at both sides, so it is shown whole, standing on the panel's lower edge. */
+.team-lead__media .team__photo { object-fit: contain; }
+.team-lead__body { display: grid; align-content: center; padding: clamp(28px, 4.5vw, 64px); }
+.team-lead__name { font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-display); font-weight: 600; color: #fff; }
+.team-lead__discipline { margin-block: 8px 24px; font-weight: 600; color: #ff7a45; }
+.team-lead__bio { display: grid; gap: 1em; max-inline-size: var(--reading-max); }
+.team-lead__bio p { color: var(--color-on-dark); }
+@media (min-width: 64rem) {
+  .team-lead { grid-template-columns: minmax(0, 6fr) minmax(0, 7fr); }
+  .team-lead__media {
+    aspect-ratio: auto; min-block-size: 480px;
+    --cut: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+    --cut-inner: polygon(0 0, calc(100% - 8px) 0, calc(86% - 8px) 100%, 0 100%);
+  }
+  :root[dir='rtl'] .team-lead__media {
+    --cut: polygon(0 0, 100% 0, 100% 100%, 14% 100%);
+    --cut-inner: polygon(8px 0, 100% 0, 100% 100%, calc(14% + 8px) 100%);
+  }
+}
+
+/* Co-founders */
+.team-grid { list-style: none; display: grid; gap: clamp(20px, 2.4vw, 28px); }
+@media (min-width: 40rem) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 64rem) { .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.team-card { display: grid; grid-template-rows: auto 1fr; overflow: hidden; border: 1px solid var(--color-line); border-radius: var(--radius-panel); background: var(--color-white); }
+.team-card__media { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: var(--color-navy-2); }
+.team-card__body { display: flex; flex-direction: column; padding: 24px 24px 28px; border-block-start: 3px solid var(--color-orange); }
+.team-card__body .eyebrow { margin-block-end: 10px; }
+.team-card__discipline { margin-block: 4px 14px; font-weight: 600; color: var(--color-navy); }
+.team-card__bio { font-size: 1rem; line-height: 1.65; }
+:root[dir='rtl'] .team-card__bio { font-size: 1.0625rem; line-height: 1.85; }
+.team__focus { margin-block-start: 24px; }
+.team-card .team__focus { margin-block-start: auto; padding-block-start: 20px; }
+
+/* Every person stands on the same navy drafting panel: a cut-out portrait in front of two slanted
+   bars at the logo's angle, or a drawing of the discipline until a portrait is supplied. */
+.team__panel { position: absolute; inset: 0; overflow: hidden; background: var(--color-navy-2); }
+.team__panel--portrait { background: radial-gradient(70% 55% at 50% 42%, rgb(29 48 73 / 0.95), transparent 72%), var(--color-navy-2); }
+.team__bar { position: absolute; block-size: 12%; transform: skewX(-35deg); }
+.team__bar--orange { inset-block-start: 21%; inset-inline: 50% -14%; background: var(--color-orange); }
+.team__bar--light { inset-block-start: 37%; inset-inline: -14% 50%; background: rgb(232 238 244 / 0.1); }
+:root[dir='rtl'] .team__bar { transform: skewX(35deg); }
+.team__photo { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; }
+.team__drawing { display: grid; place-items: center; }
+.team__drawing-grid {
+  position: absolute; inset: 0;
   background-image: linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-size: 24px 24px;
 }
-.founder__slash {
-  position: absolute; inset-block-start: 14%; inset-inline-end: -18%; inline-size: 70%; block-size: 22%;
-  background: var(--color-orange); transform: skewX(-38deg); opacity: 0.95;
-}
-:root[dir='rtl'] .founder__slash { transform: skewX(38deg); }
-.founder__slash::after {
-  content: ''; position: absolute; inset-block-start: 130%; inset-inline: 10% -10%; block-size: 70%;
-  border: 2px solid rgb(255 255 255 / 0.5);
-}
-.founder__name { position: relative; font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.75rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; }
-:root[dir='rtl'] .founder__name { letter-spacing: 0; line-height: 1.3; }
-.founder__role { position: relative; color: var(--color-muted-on-dark); }
-.founder__role-text { margin-block: 8px 24px; font-weight: 600; color: var(--color-orange-text); }
+.team__motif { position: relative; inline-size: 78%; block-size: auto; overflow: visible; }
+.team__motif-line { fill: none; stroke: rgb(232 238 244 / 0.72); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.team__motif-slab { stroke: rgb(232 238 244 / 0.9); stroke-width: 5; }
+.team__motif-faint { fill: none; stroke: rgb(232 238 244 / 0.3); stroke-width: 1.5; stroke-linecap: round; }
+.team__motif-dash { fill: none; stroke: rgb(232 238 244 / 0.32); stroke-width: 1.5; stroke-dasharray: 6 6; }
+.team__motif-node circle { fill: var(--color-navy-2); stroke: rgb(232 238 244 / 0.8); stroke-width: 2; }
+.team__motif-accent { fill: none; stroke: var(--color-orange); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+rect.team__motif-accent { fill: rgb(250 82 17 / 0.16); stroke-width: 3; }
 
 .timeline { list-style: none; display: grid; gap: 0; position: relative; }
 .timeline__item { position: relative; display: grid; gap: 6px; padding-block: 0 28px; padding-inline-start: 36px; }

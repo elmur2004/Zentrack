@@ -15,6 +15,8 @@ import * as services from '../src/content/public/services';
 import * as networks from '../src/content/public/networks';
 import * as track from '../src/content/public/track';
 import * as editorial from '../src/content/public/editorial';
+import * as buildingSystems from '../src/content/public/building-systems';
+import * as team from '../src/content/public/team';
 import { publicArticles, publicDownloads, publicProjects } from '../src/content/public';
 import { articleToPublic, projectToPublic } from '../src/lib/content/projection';
 import { checkLocalizedRecords, findPrivateKeys, scanForbidden, type Issue } from '../src/lib/checks';
@@ -26,7 +28,7 @@ const warnings: string[] = [];
 
 // 1. Placeholder / claim scan over everything that can render publicly
 issues.push(...scanForbidden({ en, ar }, 'messages'));
-issues.push(...scanForbidden({ services, networks, track, editorial }, 'content'));
+issues.push(...scanForbidden({ services, networks, track, editorial, buildingSystems, team }, 'content'));
 issues.push(...scanForbidden({ publicProjects, publicArticles }, 'projection'));
 
 // 2. Projection integrity

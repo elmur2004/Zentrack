@@ -197,7 +197,7 @@ const en = {
     meta: {
       title: 'About Us',
       description:
-        'Zentrac is an engineering and BIM consultancy in Cairo, founded in 2026 by civil engineer Mark Mofreh, whose roads and infrastructure experience began in 2018.',
+        'Engineering and BIM consultancy in Cairo, founded in 2026 by civil engineer Mark Mofreh with co-founders in BIM coordination, hydraulics and architecture.',
     },
     hero: {
       eyebrow: 'About us',
@@ -208,7 +208,7 @@ const en = {
       eyebrow: 'The company',
       title: 'A new company built on founder experience since 2018.',
       paragraphs: [
-        'Zentrac was established in 2026. Its work draws on the experience of its founder, a civil engineer working in roads and infrastructure since 2018, and on packages delivered through his former individual practice, BIM Experts.',
+        'Zentrac was established in 2026 by Mark Mofreh, a civil engineer working in roads and infrastructure since 2018, together with three co-founders whose experience covers BIM coordination, hydraulic engineering and architecture. Its work also draws on packages Mark delivered through his former individual practice, BIM Experts.',
         'Our service focus combines BIM modelling, coordination and shop-drawing production within clearly defined scopes. For every assignment we agree the disciplines, responsibilities and deliverables in writing.',
       ],
       facts: {
@@ -220,16 +220,13 @@ const en = {
         officeValue: 'Heliopolis, Cairo',
       },
     },
-    founder: {
-      eyebrow: 'Our founder',
-      name: 'Mark Mofreh',
-      role: 'Founder · Civil Engineer',
-      bio: [
-        'Mark Mofreh is the founder of Zentrac and a civil engineer who began his professional career in roads and infrastructure in 2018.',
-        'His experience includes shop drawings, quantity take-offs, bills of quantities and utility review, alongside BIM modelling and coordination for roads, utilities and landscape.',
-        'Before establishing Zentrac, he operated BIM Experts as his individual practice and contributed to defined outsourced packages within larger projects in Saudi Arabia, Egypt and Rwanda.',
-      ],
-      panelLabel: 'Founder name panel',
+    team: {
+      eyebrow: 'Founding team',
+      title: 'The people behind Zentrac.',
+      intro:
+        'Zentrac brings together experience in civil and hydraulic engineering, architecture and BIM coordination. The experience described below was gained before Zentrac was established in 2026.',
+      coFounders: 'Co-founders',
+      portraitAlt: 'Portrait of {name}',
     },
     chronology: {
       eyebrow: 'Chronology',

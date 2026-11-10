@@ -12,12 +12,13 @@ import { buildingSystems } from '../src/content/public/building-systems';
 import { stages, engagements } from '../src/content/public/track';
 import { audiences, partnerTypes, principles, projectTypes, values } from '../src/content/public/editorial';
 import { company } from '../src/content/public/company';
+import { founder, coFounders } from '../src/content/public/team';
 import { checkLocalizedRecords, compareDictionaries } from '../src/lib/checks';
 
 const issues = [
   ...compareDictionaries(en, ar, 'messages'),
   ...compareDictionaries(adminEn, adminAr, 'admin'),
-  ...checkLocalizedRecords({ services, networks, buildingSystems, stages, engagements, audiences, partnerTypes, principles, values, projectTypes, company }, 'content'),
+  ...checkLocalizedRecords({ services, networks, buildingSystems, stages, engagements, audiences, partnerTypes, principles, values, projectTypes, company, founder, coFounders }, 'content'),
 ];
 
 const keyCount = (o: unknown): number =>

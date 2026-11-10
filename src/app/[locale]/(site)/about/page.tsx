@@ -4,9 +4,11 @@ import { isLocale } from '@/i18n/config';
 import { pageMetadata } from '@/lib/seo';
 import { crumbs, resolveLocale } from '@/lib/page';
 import { values } from '@/content/public/editorial';
+import { coFounders, founder } from '@/content/public/team';
 import { PageHero } from '@/components/layout/PageHero';
 import { ContactBand } from '@/components/sections/ContactBand';
 import { Eyebrow } from '@/components/ui/Button';
+import { FoundingTeam } from '@/components/sections/FoundingTeam';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/about'>): Promise<Metadata> {
   const { locale } = await params;
@@ -63,32 +65,16 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
         </div>
       </section>
 
-      <section className="section section--paper" aria-labelledby="founder-title">
-        <div className="container founder">
-          {/* Typographic founder panel (no confirmed portrait). Decorative: the name is the H2 beside it. */}
-          <div className="founder__panel on-dark" aria-hidden="true">
-            <span className="founder__grid" aria-hidden="true" />
-            <span className="founder__slash" aria-hidden="true" />
-            <span className="founder__name" aria-hidden="true">
-              {a.founder.name}
-            </span>
-            <span className="founder__role" aria-hidden="true">
-              {a.founder.role}
-            </span>
-            <span className="corner-marks" aria-hidden="true" />
-          </div>
-          <div className="founder__copy" data-reveal>
-            <Eyebrow>{a.founder.eyebrow}</Eyebrow>
-            <h2 id="founder-title" className="h2">
-              {a.founder.name}
+      <section className="section section--paper" aria-labelledby="team-title">
+        <div className="container">
+          <div className="section-head" data-reveal>
+            <Eyebrow>{a.team.eyebrow}</Eyebrow>
+            <h2 id="team-title" className="h2">
+              {a.team.title}
             </h2>
-            <p className="founder__role-text">{a.founder.role}</p>
-            <div className="prose">
-              {a.founder.bio.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
+            <p className="lead muted">{a.team.intro}</p>
           </div>
+          <FoundingTeam founder={founder} coFounders={coFounders} locale={locale} labels={{ coFounders: a.team.coFounders, portraitAlt: a.team.portraitAlt }} />
         </div>
       </section>
 
